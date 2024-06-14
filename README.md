@@ -1,27 +1,32 @@
-# MyFlixAngularClient
+# MyFlix-Angular Movie Database Web Application
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+This repository contains the frontend client for the MyFlix movie database web application. It is designed to provide users with access to information about different movies, directors, and genres. Users can register, update their personal information, and create a list of their favorite movies.
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **User Registration**: New users can create an account.
+- **User Login**: Users can securely log in to the application.
+- **Movie Information**: Users can see detailed information about each movie, including genres and directors.
+- **Search**: Users can search for movies by title.
+- **Favorites**: Users can add or remove movies from their list of favorites.
 
-## Code scaffolding
+## Technologies
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project is built with the following technologies:
 
-## Build
+- **Angular**: A JavaScript library for building user interfaces.
+- **SCSS**: A preprocessor scripting language that is interpreted or compiled into Cascading Style Sheets (CSS).
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The application communicates with a backend API built with Node, Express, MongoDB, and Mongoose.
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+To get started with this project, clone the repository and install the dependencies with `npm install`. Then, you can start the development server with `ng serve --open`.
 
-## Running end-to-end tests
+## Contributing
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Contributions are welcome. Please make a pull request.
 
-## Further help
+## License
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project is licensed under the ISC License.
