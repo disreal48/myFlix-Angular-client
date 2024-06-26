@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DirectorCardComponent } from '../director-card/director-card.component';
+import { GenreCardComponent } from '../genre-card/genre-card.component';
+import { DescriptionCardComponent } from '../description-card/description-card.component';
 
 @Component({
   selector: 'app-movie-card',
@@ -24,7 +27,7 @@ export class MovieCardComponent {
 
   checkFavorites(): void {
     this.movies.forEach((movie: any) => {
-      console.log(movie);
+      // console.log(movie);
       const isFavorite = this.favoriteMovies.find(
         (favorite: any) => favorite._id === movie._id
       );
@@ -78,6 +81,27 @@ export class MovieCardComponent {
         duration: 2000,
       });
       return this.favoriteMovies;
+    });
+  }
+
+  openDirectorDialog(movie: any): void {
+    this.dialog.open(DirectorCardComponent, {
+      width: '280px',
+      data: { movie },
+    });
+  }
+
+  openGenreDialog(movie: any): void {
+    this.dialog.open(GenreCardComponent, {
+      width: '280px',
+      data: { movie },
+    });
+  }
+
+  openDescriptionDialog(movie: any): void {
+    this.dialog.open(DescriptionCardComponent, {
+      width: '280px',
+      data: { movie },
     });
   }
 }

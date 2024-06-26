@@ -8,7 +8,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -22,6 +22,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FavoriteMovieCardComponent } from './favorite-movie-card/favorite-movie-card.component';
+import { DirectorCardComponent } from './director-card/director-card.component';
+import { GenreCardComponent } from './genre-card/genre-card.component';
+import { DescriptionCardComponent } from './description-card/description-card.component';
+import { ProfilePageComponent } from './profile-page/profile-page.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
@@ -39,6 +43,10 @@ const appRoutes: Routes = [
     WelcomePageComponent,
     NavBarComponent,
     FavoriteMovieCardComponent,
+    DirectorCardComponent,
+    GenreCardComponent,
+    DescriptionCardComponent,
+    ProfilePageComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -57,7 +65,10 @@ const appRoutes: Routes = [
     MatNativeDateModule,
     MatIconModule,
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [
+    provideAnimationsAsync(),
+    { provide: MAT_DIALOG_DATA, useValue: {} },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
