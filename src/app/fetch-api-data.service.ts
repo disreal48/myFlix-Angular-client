@@ -95,8 +95,9 @@ export class FetchApiDataService {
   //Making the api call for the edit user endpoint
   editUser(userDetails: any): Observable<any> {
     const token = localStorage.getItem('token');
+    const user = JSON.parse(localStorage.getItem('user') || '{}');
     return this.http
-      .put(apiUrl + 'users/' + userDetails.Username, userDetails, {
+      .put(apiUrl + 'users/' + user.Username, userDetails, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),

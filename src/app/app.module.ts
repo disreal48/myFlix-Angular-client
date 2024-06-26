@@ -26,11 +26,13 @@ import { DirectorCardComponent } from './director-card/director-card.component';
 import { GenreCardComponent } from './genre-card/genre-card.component';
 import { DescriptionCardComponent } from './description-card/description-card.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { MatListModule } from '@angular/material/list';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
   { path: 'favorites', component: FavoriteMovieCardComponent },
+  { path: 'profile', component: ProfilePageComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -64,6 +66,7 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatIconModule,
+    MatListModule,
   ],
   providers: [
     provideAnimationsAsync(),
