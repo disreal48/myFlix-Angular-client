@@ -20,10 +20,13 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
 import { WelcomePageComponent } from './welcome-page/welcome-page.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { FavoriteMovieCardComponent } from './favorite-movie-card/favorite-movie-card.component';
 
 const appRoutes: Routes = [
   { path: 'welcome', component: WelcomePageComponent },
   { path: 'movies', component: MovieCardComponent },
+  { path: 'favorites', component: FavoriteMovieCardComponent },
   { path: '', redirectTo: 'welcome', pathMatch: 'prefix' },
 ];
 
@@ -34,6 +37,8 @@ const appRoutes: Routes = [
     UserLoginFormComponent,
     MovieCardComponent,
     WelcomePageComponent,
+    NavBarComponent,
+    FavoriteMovieCardComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

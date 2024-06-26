@@ -118,10 +118,11 @@ export class FetchApiDataService {
   }
 
   //Making the api call for the get favorite movies endpoint
-  getFavoriteMovies(username: string): Observable<any> {
+  getFavoriteMovies(): Observable<any> {
     const token = localStorage.getItem('token');
+    const user = localStorage.getItem('user') || '{}';
     return this.http
-      .get(apiUrl + 'users/' + username, {
+      .get(apiUrl + 'users/' + user + '/movies', {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
@@ -131,12 +132,12 @@ export class FetchApiDataService {
 
   //Making the api call for the add favorite movies endpoint
   addFavoriteMovies(movie: any): Observable<any> {
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const user = localStorage.getItem('user') || '{}';
     const token = localStorage.getItem('token');
     console.log('in fetch api service: ', movie);
     console.log('in fetch api service_id: ', movie._id);
     return this.http
-      .post(apiUrl + 'users/' + user.Username + '/movies/' + movie._id, null, {
+      .post(apiUrl + 'users/' + user + '/movies/' + movie._id, null, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
@@ -146,11 +147,11 @@ export class FetchApiDataService {
 
   //Making the api call for the delete favorite movies endpoint
   deleteFavoriteMovies(movie: any): Observable<any> {
-    const user = JSON.parse(localStorage.getItem('user') || '{}');
+    const user = localStorage.getItem('user') || '{}';
     const token = localStorage.getItem('token');
     console.log('in fetch api service: ', movie._id);
     return this.http
-      .delete(apiUrl + 'users/' + user.Username + '/movies/' + movie._id, {
+      .delete(apiUrl + 'users/' + user + '/movies/' + movie._id, {
         headers: new HttpHeaders({
           Authorization: 'Bearer ' + token,
         }),
