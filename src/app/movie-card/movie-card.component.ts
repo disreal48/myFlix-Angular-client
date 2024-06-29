@@ -23,6 +23,7 @@ export class MovieCardComponent {
   ngOnInit(): void {
     this.getFavoriteMovies();
     this.getMovies();
+    this.checkFavorites();
   }
 
   checkFavorites(): void {
@@ -86,21 +87,21 @@ export class MovieCardComponent {
 
   openDirectorDialog(movie: any): void {
     this.dialog.open(DirectorCardComponent, {
-      width: '280px',
+      width: '400px',
       data: { movie },
     });
   }
 
   openGenreDialog(movie: any): void {
     this.dialog.open(GenreCardComponent, {
-      width: '280px',
+      width: '400px',
       data: { movie },
     });
   }
 
   openDescriptionDialog(movie: any): void {
     this.dialog.open(DescriptionCardComponent, {
-      width: '280px',
+      width: '400px',
       data: { movie },
     });
   }

@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FetchApiDataService } from '../fetch-api-data.service';
 import { MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { DirectorCardComponent } from '../director-card/director-card.component';
+import { GenreCardComponent } from '../genre-card/genre-card.component';
+import { DescriptionCardComponent } from '../description-card/description-card.component';
 
 @Component({
   selector: 'app-favorite-movie-card',
@@ -36,6 +39,27 @@ export class FavoriteMovieCardComponent {
         duration: 2000,
       });
       return this.favoriteMovies;
+    });
+  }
+
+  openDirectorDialog(movie: any): void {
+    this.dialog.open(DirectorCardComponent, {
+      width: '400px',
+      data: { movie },
+    });
+  }
+
+  openGenreDialog(movie: any): void {
+    this.dialog.open(GenreCardComponent, {
+      width: '400px',
+      data: { movie },
+    });
+  }
+
+  openDescriptionDialog(movie: any): void {
+    this.dialog.open(DescriptionCardComponent, {
+      width: '400px',
+      data: { movie },
     });
   }
 }
