@@ -26,7 +26,7 @@ export class ProfilePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getLocalUser();
-    console.log(this.localUser.Username);
+    // console.log(this.localUser.Username);
   }
 
   getLocalUser(): void {
